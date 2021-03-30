@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Globe from './Globe.js';
+import React, { Suspense, useState } from 'react'
+import { Canvas } from '@react-three/fiber';
+import CameraControls from './Controls.js'
+import Info from './Info.js';
+import Model from './Iss.js';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showInfo: false,
+      setShowInfo: this.setShowInfo.bind(this)
+    }
+  }
+
+  setShowInfo(val) {
+    this.setState({showInfo: val})
+    setTimeout(() => {
+      console.log(this.state)
+    }, 1000)
+  }
+
+  render() {
+     return (
+    <>
+      <Canvas>
+        <CameraControls/>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]}/>
+        <Suspense fallback={null}>
+          <Globe />
+          <Model setShowInfo={this.state.setShowInfo}/>
+        </Suspense>
+      </Canvas>
+       <Info info={this.state} />
+    </>
+  )
 }
+  }
+
 
 export default App;
