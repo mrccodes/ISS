@@ -1,0 +1,28 @@
+.show-passengers{
+  border: 2px solid rgb(105, 101, 101);
+  border-left: none;
+  border-right: none;
+  padding: 15px;
+  border-top: none;;
+}
+
+.hide-passengers, .show-passengers{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hide-passengers{
+  margin-bottom:10px;
+}
+
+.astronaut{
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.astronaut:hover{
+  color: rgb(180, 158, 158);
+  text-decoration: underline;
+}
