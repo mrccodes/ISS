@@ -23,13 +23,15 @@ class App extends React.Component {
   }
 
   render() {
+
      return (
     <>
-      <Canvas>
+      <Canvas backgroundImageUrl={"unpkg.com/three-globe/example/img/night-sky.png"}>
         <CameraControls/>
         <ambientLight />
         <pointLight position={[10, 10, 10]}/>
         <Suspense fallback={null}>
+
           <Globe />
           <Model setShowInfo={this.state.setShowInfo}/>
         </Suspense>
