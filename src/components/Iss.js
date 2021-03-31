@@ -1,5 +1,5 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import {  useFrame, useLoader } from '@react-three/fiber';
+import {  useLoader } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 import { getIssCords } from '../utils/issHelpers.js'
 import News from './News.js'
@@ -21,6 +21,7 @@ export const Model = (props) => {
 
   const issUtils = {
     name: "International Space Station",
+    showCords: true,
     getCords: getIssCords,
     cordsInterval: 1500,
     components: [<News/>, <Passengers/>]

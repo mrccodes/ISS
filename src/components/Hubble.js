@@ -1,5 +1,5 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import {  useFrame, useLoader } from '@react-three/fiber';
+import {  useLoader } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 
 
@@ -14,7 +14,13 @@ const Hubble = (props) => {
 
   //triggers information panel
   const onHubbleClick = () => {
-    props.setShowInfo("Hubble");
+    props.setShowInfo(hubbleUtils);
+  }
+
+  const hubbleUtils = {
+    name: "Hubble Telescope",
+    components: [null],
+    showCords: false
   }
 
   const { scene } = useLoader(GLTFLoader, "/Hubble.glb");

@@ -1,6 +1,6 @@
 
 import Globe from './Globe.js';
-import React, { Suspense, useState } from 'react'
+import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import CameraControls from './Controls.js'
 import Info from './Info.js';
@@ -31,7 +31,7 @@ class App extends React.Component {
         <Suspense fallback={null}>
           <Globe />
           <Model setShowInfo={this.state.setShowInfo}/>
-          <Hubble />
+          <Hubble setShowInfo={this.state.setShowInfo}/>
         </Suspense>
       </Canvas>
        <Info info={this.state} />
