@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NEWS_API_KEY } from '../utils/.keys.js';
+import { NEWS_API_KEY } from '../../utils/.keys.js';
 import axios from 'axios';
-import '../css/News.css'
+import '../../css/News.css'
 
 const News = () => {
 

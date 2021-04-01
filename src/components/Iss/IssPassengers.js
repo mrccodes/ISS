@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/pass.css';
+import '../../css/pass.css';
 import axios from 'axios';
 
 const Passengers = () => {

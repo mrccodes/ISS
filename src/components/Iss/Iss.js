@@ -1,9 +1,9 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {  useLoader } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
-import { getIssCords } from '../utils/issHelpers.js'
-import News from './News.js'
-import Passengers from './Passengers.js'
+import { getIssCords } from '../../utils/issHelpers.js'
+import News from './IssNews.js'
+import Passengers from './IssPassengers.js'
 
 export const Model = (props) => {
   const iss = useRef();
@@ -23,6 +23,7 @@ export const Model = (props) => {
     name: "International Space Station",
     showCords: true,
     getCords: getIssCords,
+    discription: "The International Space Station was launched in 1998, and has been in low Earth orbit since. It is a modular space station built in collaboration between NASA, Roscosomos, JAXA, ESA, and CSA.",
     cordsInterval: 1500,
     components: [<News/>, <Passengers/>]
   }

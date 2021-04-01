@@ -4,7 +4,7 @@ import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import CameraControls from './Controls.js'
 import Info from './Info.js';
-import { Model } from './Iss.js';
+import { Model } from './Iss/Iss.js';
 import Hubble from './Hubble.js';
 
 class App extends React.Component {

@@ -20,7 +20,8 @@ const Hubble = (props) => {
   const hubbleUtils = {
     name: "Hubble Telescope",
     components: [null],
-    showCords: false
+    showCords: false,
+    discription: "The Hubble Space Telescope was launched into orbit in 1990 and has since made over 1.3 million observations."
   }
 
   const { scene } = useLoader(GLTFLoader, "/Hubble.glb");
