@@ -1,0 +1,26 @@
+.hubble-photo{
+  width: 100%;
+  overflow: hidden;
+}
+
+.hide-hubble-photos, .show-hubble-photos{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hide-hubble-photos{
+  margin-bottom:10px;
+
+}
+
+.show-hubble-photos{
+  border: 2px solid rgb(105, 101, 101);
+  border-left: none;
+  border-right: none;
+  padding: 15px;
+}
+
+.image{
+
+}
+

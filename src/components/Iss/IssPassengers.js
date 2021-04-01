@@ -29,7 +29,7 @@ const Passengers = () => {
     <div >
       <div onClick={onShowPassengers} className="hide-passengers">Hide Passengers
       <i class="fas fa-caret-up"></i></div>
-
+      <p className="tooltip">According to NASA's website, these astronauts are currently on board the International Space Station. Click their names to read more about them.</p>
       {passengers.map((x) => {
         return (
           <div>

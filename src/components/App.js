@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber';
 import CameraControls from './Controls.js'
 import Info from './Info.js';
 import { SpaceStation } from './Iss/Iss.js';
-import Hubble from './Hubble.js';
+import Hubble from './Hubble/Hubble.js';
 
 class App extends React.Component {
   constructor(props) {

@@ -27,6 +27,7 @@ const News = () => {
   return visible === true ? (
     <>
       <div onClick={onShowArticlesClick} className="hide-articles">Hide news  <i class="fas fa-caret-up"></i></div>
+      <p className="tooltip">Click headlines to read full story</p>
       <div className="news-container">
           {data.map((x) => {
             return (
