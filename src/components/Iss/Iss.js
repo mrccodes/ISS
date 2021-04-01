@@ -10,7 +10,7 @@ export const SpaceStation = (props) => {
 
   //sets position and scale of ISS once the model has loaded
   useEffect(() => {
-    iss.current.scale.set(0.002, 0.002, 0.002)
+    iss.current.scale.set(0.003, 0.003, 0.003)
     iss.current.position.set(1.5, 1.5, 1.5)
   }, []);
 

@@ -1,6 +1,10 @@
 .hubble-photo{
   width: 100%;
   overflow: hidden;
+  background-size: cover;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .hide-hubble-photos, .show-hubble-photos{
@@ -20,7 +24,11 @@
   padding: 15px;
 }
 
-.image{
+.hubble-photo-container{
+  border: 1px solid white;
+}
 
+.hubble-photo-title{
+  color: white;
 }
 

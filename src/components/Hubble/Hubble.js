@@ -8,7 +8,7 @@ const Hubble = (props) => {
 
   //sets position and scale of Hubble Telescope once the model has loaded
   useEffect(() => {
-    HT.current.scale.set(0.01, 0.01, 0.01)
+    HT.current.scale.set(0.015, 0.015, 0.015)
     HT.current.position.set(-1.5, 1.2, 1.5)
   }, []);
 
@@ -18,10 +18,10 @@ const Hubble = (props) => {
   }
 
   const hubbleUtils = {
-    name: "Hubble Telescope",
+    name: "Hubble Space Telescope",
     components: [<HubblePhotos />],
     showCords: false,
-    discription: "The Hubble Space Telescope was launched into orbit in 1990 and has since made over 1.3 million observations."
+    discription: "The Hubble Space Telescope was launched into orbit in 1990 and has since made over 1.3 million observations, some of which you can view below!"
   }
 
   const { scene } = useLoader(GLTFLoader, "/Hubble.glb");

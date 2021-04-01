@@ -34,11 +34,11 @@ export const HubblePhotos = () => {
           <div onClick={onShowPhotosClick} className="hide-hubble-photos">Hide Photos <i class="fas fa-caret-down"></i></div>
               {photos.map((x) => {
                 return (
-                  <div className="hubble-photo" >
-                    <p>{x.title}</p>
-                    <img className="image" alt={x.title} src={x.href}></img>
+                  <div className="hubble-photo-container">
+                  <p className="hubble-photo-title">{x.title}</p>
+                  <div style={{backgroundImage: `url(${x.href})`}} className="hubble-photo" >
                   </div>
-
+                  </div>
                 )
               })}
         </div>
