@@ -5,7 +5,7 @@ import { getIssCords } from '../../utils/issHelpers.js'
 import News from './IssNews.js'
 import Passengers from './IssPassengers.js'
 
-export const Model = (props) => {
+export const SpaceStation = (props) => {
   const iss = useRef();
 
   //sets position and scale of ISS once the model has loaded

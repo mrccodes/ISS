@@ -4,7 +4,7 @@ import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import CameraControls from './Controls.js'
 import Info from './Info.js';
-import { Model } from './Iss/Iss.js';
+import { SpaceStation } from './Iss/Iss.js';
 import Hubble from './Hubble.js';
 
 class App extends React.Component {
@@ -30,7 +30,7 @@ class App extends React.Component {
         <pointLight position={[10, 10, 10]}/>
         <Suspense fallback={null}>
           <Globe />
-          <Model setShowInfo={this.state.setShowInfo}/>
+          <SpaceStation setShowInfo={this.state.setShowInfo}/>
           <Hubble setShowInfo={this.state.setShowInfo}/>
         </Suspense>
       </Canvas>
