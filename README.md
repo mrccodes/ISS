@@ -9,8 +9,8 @@
 
 ### 3. Rename the file ".keys.sample.js" to ".keys.js" (located in /utils) and fill it out with your API key from thenewsapi.com
 
-### 4. Run `npm start` for development
-###    Run `npm run build` for production
+### 4. Run `npm start` for development / `npm run build` for production
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
