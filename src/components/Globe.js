@@ -30,7 +30,6 @@ function Globe() {
       <sphereGeometry args={[1, 300, 300]}/>
       <meshStandardMaterial  map={earthTexture} />
     </mesh>
-
     <Stars
     radius={150} // Radius of the inner sphere (default=100)
     depth={100} // Depth of area where stars should fit (default=50)

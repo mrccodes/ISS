@@ -7,6 +7,7 @@ import Info from './Info.js';
 import { SpaceStation } from './Iss/Iss.js';
 import Hubble from './Hubble/Hubble.js';
 import * as THREE from 'three';
+import { Loader } from '@react-three/drei';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class App extends React.Component {
         </Suspense>
       </Canvas>
        <Info info={this.state} />
+       <Loader />
     </>
   )
 }
