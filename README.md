@@ -1,7 +1,7 @@
 # Whats Around Me
 ## This is a 3D earth visualization that lets users explore some of the cool (in my opinion) things that orbit Earth. 
 
-### To use this app:
+### To use/contribute to this app:
 
 ### 1. Fork it and clone it
 
@@ -9,7 +9,8 @@
 
 ### 3. Rename the file ".keys.sample.js" to ".keys.js" (located in /utils) and fill it out with your API key from thenewsapi.com
 
-### 4. Run `npm start`
+### 4. Run `npm start` for development
+###    Run `npm run build` for production
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
