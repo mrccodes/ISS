@@ -21,14 +21,14 @@ const Passengers = () => {
 
   return visible === false ? (
     <div onClick={onShowPassengers} className="show-passengers">
-      Current ISS Passengers<i class="fas fa-caret-down"></i>
+      Current ISS Passengers<i className="fas fa-caret-down"></i>
     </div>
   )
   :
   (
     <div >
       <div onClick={onShowPassengers} className="hide-passengers">Hide Passengers
-      <i class="fas fa-caret-up"></i></div>
+      <i className="fas fa-caret-up"></i></div>
       <p className="tooltip">According to NASA's website, these astronauts are currently on board the International Space Station. Click their names to read more about them.</p>
       {passengers.map((x) => {
         return (

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import {  useFrame, useLoader, useThree } from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
 import { CubeTextureLoader } from "three";
+import { Stars } from '@react-three/drei';
 
 
 
@@ -9,24 +10,9 @@ function Globe() {
   // This reference will give us direct access to the mesh
   const mesh = useRef()
 
-  let texture = useLoader(TextureLoader, 'earthmap.jpg');
+  let earthTexture = useLoader(TextureLoader, 'earthmap.jpg');
 
-  const SkyBox = () => {
-    const  {scene}  = useThree();
-    const loader = new CubeTextureLoader();
-
-    const texture = loader.load([
-      "//unpkg.com/three-globe/example/img/night-sky.png",
-      "//unpkg.com/three-globe/example/img/night-sky.png",
-      "//unpkg.com/three-globe/example/img/night-sky.png",
-      "//unpkg.com/three-globe/example/img/night-sky.png",
-      "//unpkg.com/three-globe/example/img/night-sky.png",
-      "//unpkg.com/three-globe/example/img/night-sky.png"
-    ])
-
-    scene.background = texture;
-    return null
-  }
+  const  {scene}  = useThree();
 
   // Rotate mesh every frame, this is outside of React without overhead
   useFrame(() => (mesh.current.rotation.y += 0.00003))
@@ -42,9 +28,16 @@ function Globe() {
       scale={3}
      >
       <sphereGeometry args={[1, 300, 300]}/>
-      <meshStandardMaterial  map={texture} />
+      <meshStandardMaterial  map={earthTexture} />
     </mesh>
-    <SkyBox/>
+
+    <Stars
+    radius={150} // Radius of the inner sphere (default=100)
+    depth={100} // Depth of area where stars should fit (default=50)
+    count={3000} // Amount of stars (default=5000)
+    factor={5} // Size factor (default=4)
+    saturation={1} // Saturation 0-1 (default=0)
+  />
     </>
   )
 }

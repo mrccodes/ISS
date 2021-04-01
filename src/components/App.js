@@ -1,11 +1,12 @@
 
 import Globe from './Globe.js';
 import React, { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import CameraControls from './Controls.js'
 import Info from './Info.js';
 import { SpaceStation } from './Iss/Iss.js';
 import Hubble from './Hubble/Hubble.js';
+import * as THREE from 'three';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,10 @@ class App extends React.Component {
 
      return (
     <>
-      <Canvas backgroundImageUrl={"unpkg.com/three-globe/example/img/night-sky.png"}>
+      <Canvas  onCreated={({ gl, scene }) => {
+        gl.outputEncoding = THREE.sRGBEncoding
+        scene.background = new THREE.Color('#000')} }>
+
         <CameraControls/>
         <ambientLight />
         <pointLight position={[10, 10, 10]}/>

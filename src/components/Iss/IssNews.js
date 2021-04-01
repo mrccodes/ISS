@@ -9,7 +9,8 @@ const News = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    axios.get(`https://api.thenewsapi.com/v1/news/all?api_token=${NEWS_API_KEY}&language=en&limit=5&search=international+space+station`)
+    let fetchNews = async () => {
+       axios.get(`https://api.thenewsapi.com/v1/news/all?api_token=${NEWS_API_KEY}&language=en&limit=5&search=international+space+station`)
       .then(res => {
         let recentArticles = res.data.data;
         setData(recentArticles)
@@ -17,6 +18,8 @@ const News = () => {
       .catch(err => {
         console.log(err)
       })
+    }
+    fetchNews();
   }, [])
 
   const onShowArticlesClick = () => {

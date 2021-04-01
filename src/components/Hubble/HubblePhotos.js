@@ -8,21 +8,24 @@ export const HubblePhotos = () => {
   const [showPhotos, setShowPhotos] = useState(false);
 
   useEffect(() => {
+    const fetchPhotos = async () => {
       axios.get('https://images-api.nasa.gov/search?q=hubble')
       .then(res => {
         let data = res.data.collection.items;
-        console.log(data)
         let newPhotos = [];
         data.forEach((x) => {
           const photo = {
             href: x.links['0'].href,
-            title: x.data['0'].title
+            title: x.data['0'].title,
+            id: x.data['0'].nasa_id
           };
           newPhotos.push(photo)
         })
-        console.log({newPhotos})
         setPhotos(newPhotos)
       })
+    }
+
+    fetchPhotos();
   }, [])
 
   const onShowPhotosClick = () => {
@@ -34,7 +37,7 @@ export const HubblePhotos = () => {
           <div onClick={onShowPhotosClick} className="hide-hubble-photos">Hide Photos <i class="fas fa-caret-down"></i></div>
               {photos.map((x) => {
                 return (
-                  <div className="hubble-photo-container">
+                  <div key={x.id} className="hubble-photo-container">
                   <p className="hubble-photo-title">{x.title}</p>
                   <div style={{backgroundImage: `url(${x.href})`}} className="hubble-photo" >
                   </div>
