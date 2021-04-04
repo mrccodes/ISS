@@ -14,7 +14,7 @@ const Hubble = (props) => {
 
   //triggers information panel, panel uses utils passed here to diplay info
   const onHubbleClick = () => {
-    props.setShowInfo(hubbleUtils);
+    props.setRenderInfo(hubbleUtils);
   }
 
   const hubbleUtils = {

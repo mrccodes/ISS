@@ -16,7 +16,7 @@ export const SpaceStation = (props) => {
 
   //triggers information panel
   const onIssClick = () => {
-    props.setShowInfo(issUtils);
+    props.setRenderInfo(issUtils);
   }
 
   const issUtils = {

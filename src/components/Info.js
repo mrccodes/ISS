@@ -3,31 +3,33 @@ import { Coordinates } from './Coordinates.js'
 
 
 const Info = (props) => {
-
-  const [cords, setCords] = useState({lat: 0, lng: 0})
-  const showCords = props.info.showInfo.showCords
+  //if props.data.renderInfo is false, render nothing
+  //otherwise, props.data.renderInfo = data for info panel
+  const [cords, setCords] = useState({lat: "Locating...", lng: "The ISS..."})
+  const showCords = props.data.renderInfo.showCords;
+  const intervalLength = props.data.renderInfo.cordsInterval;
 
   useEffect(() => {
     if (showCords) {
       const interval = setInterval(async () => {
-        const c = await props.info.showInfo.getCords()
+        const c = await props.data.renderInfo.getCords()
         setCords(c)
-      }, props.info.showInfo.cordsInterval);
+      }, intervalLength);
       return () => clearInterval(interval);
     }
   }, [showCords]);
 
   const onInfoClose = () => {
-    props.info.setShowInfo(false);
+    props.data.setRenderInfo(false);
   };
 
-  return props.info.showInfo !== false ? (
+  return props.data.renderInfo !== false ? (
     <div id="info">
       <button onClick={onInfoClose} className="closeInfo" ><i class="fas fa-times"></i></button>
-      <h2 className="title">{props.info.showInfo.name}</h2>
+      <div className="title"><h2>{props.data.renderInfo.name}</h2></div>
       {Coordinates(cords, showCords)}
-      <p>{props.info.showInfo.discription}</p>
-      {props.info.showInfo.components.map((x) =>  {return x})}
+      <p>{props.data.renderInfo.discription}</p>
+      {props.data.renderInfo.components.map((x) =>  {return x})}
     </div>
   )
   :

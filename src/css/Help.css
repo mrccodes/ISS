@@ -1,0 +1,12 @@
+.help{
+  color:  rgb(63, 70, 77);
+  position: absolute;
+  top: 10px;
+  left: 8px;
+}
+
+.help:hover{
+  cursor: pointer;
+  color: rgb(204, 202, 202);
+}
+

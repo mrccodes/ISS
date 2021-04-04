@@ -12,7 +12,7 @@
 
 .title{
   margin: 10px;
-  font-size: 35px;
+  font-size: 24px;
   color: rgb(183, 186, 192);
 }
 
@@ -26,4 +26,5 @@
 	outline: inherit;
   float: right;
   margin-right: 5px;
+  margin-bottom: 10px;
 }

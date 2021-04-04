@@ -1,25 +1,26 @@
-
-import Globe from './Globe.js';
-import React, { Suspense } from 'react'
+import React, { Suspense } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
+import * as THREE from 'three';
+import { Loader } from '@react-three/drei';
+import Globe from './Globe.js';
 import CameraControls from './Controls.js'
 import Info from './Info.js';
 import { SpaceStation } from './Iss/Iss.js';
 import Hubble from './Hubble/Hubble.js';
-import * as THREE from 'three';
-import { Loader } from '@react-three/drei';
+import { Help } from './Help.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showInfo: false,
-      setShowInfo: this.setShowInfo.bind(this)
+      renderInfo: false,
+      setRenderInfo: this.setRenderInfo.bind(this)
     }
   }
 
-  setShowInfo(val) {
-    this.setState({showInfo: val});
+
+  setRenderInfo(val) {
+    this.setState({renderInfo: val});
   }
 
   render() {
@@ -27,20 +28,21 @@ class App extends React.Component {
      return (
     <>
       <Canvas  onCreated={({ gl, scene }) => {
+        console.log(scene)
         gl.outputEncoding = THREE.sRGBEncoding
-        scene.background = new THREE.Color('#000')} }>
-
+        scene.background = new THREE.Color('#0b0c0d')} }>
         <CameraControls/>
         <ambientLight />
         <pointLight position={[10, 10, 10]}/>
         <Suspense fallback={null}>
           <Globe />
-          <SpaceStation setShowInfo={this.state.setShowInfo}/>
-          <Hubble setShowInfo={this.state.setShowInfo}/>
+          <SpaceStation setRenderInfo={this.state.setRenderInfo}/>
+          <Hubble setRenderInfo={this.state.setRenderInfo}/>
         </Suspense>
       </Canvas>
-       <Info info={this.state} />
-       <Loader />
+      <Info data={this.state} />
+      <Help setRenderInfo={this.state.setRenderInfo}/>
+      <Loader />
     </>
   )
 }
