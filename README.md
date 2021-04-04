@@ -1,7 +1,9 @@
 # Whats Around Me
-## This is a 3D earth visualization that lets users explore some of the cool (in my opinion) things that orbit Earth. 
+## This is a 3D earth visualization that lets users explore and learn about some of the cool (in my opinion) things that orbit Earth. 
+![Whats around me_ - Google Chrome 4_1_2021 3_46_42 PM](https://user-images.githubusercontent.com/70973235/113365273-8ed1c400-930a-11eb-86e4-6e32ed4dea21.png)
 
-### To use/contribute to this app:
+
+### To use/contribute to this app in development:
 
 ### 1. Fork it and clone it
 
