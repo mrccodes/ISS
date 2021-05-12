@@ -8,6 +8,7 @@ import Info from './Info.js';
 import { SpaceStation } from './Iss/Iss.js';
 import Hubble from './Hubble/Hubble.js';
 import { Help } from './Help.js';
+import { Moon } from './Moon.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class App extends React.Component {
         <pointLight position={[10, 10, 10]}/>
         <Suspense fallback={null}>
           <Globe />
+          <Moon setRenderInfo={this.state.setRenderInfo}/>
           <SpaceStation setRenderInfo={this.state.setRenderInfo}/>
           <Hubble setRenderInfo={this.state.setRenderInfo}/>
         </Suspense>

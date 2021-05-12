@@ -33,8 +33,8 @@ function Globe() {
     <Stars
     radius={150} // Radius of the inner sphere (default=100)
     depth={100} // Depth of area where stars should fit (default=50)
-    count={3000} // Amount of stars (default=5000)
-    factor={5} // Size factor (default=4)
+    count={3500} // Amount of stars (default=5000)
+    factor={3.5} // Size factor (default=4)
     saturation={1} // Saturation 0-1 (default=0)
   />
     </>
