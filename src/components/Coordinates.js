@@ -8,8 +8,8 @@ export const Coordinates = (cords, visible) => {
       <p>Longitute: {cords.lng}</p>
     </>
   )
-  :
-  (
-    null
-  )
+    :
+    (
+      null
+    )
 }

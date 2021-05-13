@@ -39,7 +39,8 @@ export const HubblePhotos = () => {
                 return (
                   <div key={x.id} className="hubble-photo-container">
                   <p className="hubble-photo-title">{x.title}</p>
-                  <div style={{backgroundImage: `url(${x.href})`}} className="hubble-photo" >
+                  <div style={{backgroundImage: `url(${x.href})`} }  className="hubble-photo" >
+
                   </div>
                   </div>
                 )
