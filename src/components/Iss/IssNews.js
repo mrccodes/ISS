@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-//import { NEWS_API_KEY } from '../../utils/.keys.js';
+import { NEWS_API_KEY } from '../../utils/.keys.js';
 import axios from 'axios';
 import '../../css/News.css'
 
@@ -11,7 +11,7 @@ const News = () => {
   useEffect(() => {
     console.log(process)
     let fetchNews = async () => {
-       axios.get(`https://api.thenewsapi.com/v1/news/all?api_token=${process.env.REACT_APP_NEWS_API_KEY}&language=en&limit=5&search=international+space+station`)
+       axios.get(`https://api.thenewsapi.com/v1/news/all?api_token=${NEWS_API_KEY}&language=en&limit=5&search=international+space+station`)
       .then(res => {
         let recentArticles = res.data.data;
         setData(recentArticles)
